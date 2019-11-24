@@ -1,685 +1,1552 @@
-----
-# **PROGRAMMING FOR PROBLEM SOLVING ESC-18105**
-----
-----
----
-## **NAME** - ***Sahil***
-## **ROLL NO.** - *1914094*
-## **BRANCH** - *CIVIL ENGINEERING*
-'''
----
-----
+![College Logo](https://www.gndec.ac.in/logo.png)
 
-#         PROGRAMS
+# **PROGRAMMING FOR PROGRAM SOLVING ESC-18105**
+## **NAME - SAHIL**
+## **ROLL NO - 1914094**
+## **SECTION - CE(B2)**
+----------------------------------------------
 
-----
+###  1. Program to find Sum
 
-## 1. ADD TWO NUMBERS
 ```C
-#include<stdio.h>
-void main()
-{
-        int a,b;
-        printf("Enter the two number to be added\n");
-        scanf("%d%d",&a,&b);
-        printf("Sum  : %d + %d = %d \n",a,b,a+b);
+    #include<stdio.h>
+    int main()
+    {  
+         float x,y,z;
+    
+         printf("\nEnter The First Numder: ");
+         scanf("%f", &x);
+         printf("\nEnter The Second Numder: ");
+         scanf("%f", &y);
 
-}
+         z = x+y;
+
+         printf("\nAnswer is: = %.3f", z);
+
+         return 0;
+    }
+```  
+
+### Output of the program
+
+    Enter The First Numder: 45.26
+
+    Enter The Second Numder: 78.2648
+
+    Answer is: = 123.525
+   
+###  2. Program to print Hello World
+
+```C
+    #include<stdio.h>
+    void main()
+    {
+         puts("\nHello World\n");
+    }
 ```
 
-----
-## 2. AVG.OF N NUMBER
+### Output of the program
+
+    Hello World
+
+###  3. Program to print a Table
+
 ```C
-#include<stdio.h>
-void main()     
-{
-        int n;
-        float sum=0;
-        printf("Enter number of elements \n");
-
-        scanf("%d",&n);
-        int a[n];
-        printf(" now enter %d elements\n",n);
-        for(int i=1;i<=n;i++)
-        {       
-                scanf("%d",&a[i]);
-                sum+=a[i];
-        }
-        float avg;
-        avg = sum/n;
-        printf("Average of %d elements is %0.2f \n",n,avg);
-}       
-```
-
-----
-## 3. WEEKDAYS BY USING SWITCH STATEMENT
-```C
-#include<stdio.h>
-void main()
-{
-        int a;
-        printf("Enter any integer between 1 to 7\n");
-        scanf("%d",&a);
-        switch(a)
-        {
-                case 1:
-                        printf("MONDAY\n");
-                        break;
-                case 2:
-                        printf("TUESDAY\n");
-                        break;
-                case 3:
-                        printf("WEDNESDAY\n");
-                        break;
-                case 4:
-                        printf("THRUSDAY\n");
-                        break;
-                case 5:
-                        printf("FRIDAY\n");
-                        break;
-                case 6:
-                        printf("SATURDAY\n");
-                        break;
-                case 7:
-                        printf("SUNDAY\n");
-                        break;
-                default :
-                        printf("Enter number between 1 to 7\n");
-                        break;
-        }
-}  
-```
-
-----
-## 4. NUMBER IS EVEN OR ODD
-```C
-#include<stdio.h>
-void main()
-{
-        int a;
-        printf("enter the number\n");
-        scanf("%d",&a);
-        if(a%2==0)
-                printf("EVEN\n");
-        else
-                printf("ODD\n");
-}
-```
-
-----
-## 5. TABLE OF ANY NUMBER
-```C
-#include<stdio.h>
-int main()
-{
-        int n,i;
-        printf("enter the number \n");
-        scanf("%d",&n);
-        printf("\t\t\tTABLE OF %d\n",n);
-        printf("\t\t\t==========\n");
-        for(i=1;i<11;i++)
-        {
-                printf("%d * %d = %d\n",n,i,n*i);
-        }               
-        return 0;       
-}
-```
-
-----
-## 6. ARMSTRONG NUMBER
-```C
-#include<stdio.h>
-int main()
-{
-        int sum=0,digit;
-        int n, temp;
-        printf("enter any positive integer number");
-        scanf("%d",&n);
-        temp=n;
-        while(temp>0)
-        {
-                digit=temp%10;
-                temp/=10;
-                sum=sum+digit*digit*digit;
-        }
-        if(n==sum)
-                printf("\n %d is a armstrong number\n",n);
-        else
-                printf("\n %d is not a armstrong number\n",n);
-}
-```
-
-----
-## 7. CALCULATOR
-```C
-#include<stdio.h>
-
-
-void main()
-{
-        
-        puts(" _______________ ");
-        puts("|_______________|");
-        puts("| 1 | 2 | 3 |   |");
-        puts("|___|___|___|   |");
-        puts("| 4 | 5 | 6 | + |");
-        puts("|___|___|___|___|");
-        puts("| 7 | 8 | 9 | - |");
-        puts("|___|___|___|___|");
-        puts("|     0     | * |");
-        puts("|___________|___|");
-
-}
-```
-----
-## 8. BUBBLE SORT
-```C
-#include<stdio.h>
-int main()
-{
-        int i,n,k,temp;
-        printf("\n enter the array size\n");
-        scanf("%d",&n);
-        int a[n];
-        printf("enter %d elements of array\n",n);
-        for(i=0;i<n;i++)
-                scanf("%d",&a[i]);
-        for(k=0;k<n-1;k++)
-        {
-                for(i=0;i<n-k-1;i++)
-                {
-                        if(a[i]>a[i+1])
-                        {
-                                temp=a[i];
-                                a[i]=a[i+1];
-                                a[i+1]=temp;
-                        }
-                }
-        }
-        printf("\n array elements after shorting\n");
-        for(i=0;i<n;i++)
-                printf("%d\t",a[i]);
-        printf("\n");
-}
-```
-
-## 9. BINARY SEARCH
-```C
-#include<stdio.h>
-int main()      
-{               
-        int m,n,a[100],search,first,last,middle;
-        printf("Enter the size of array");
-        scanf("%d",&m);
-                
-        printf("Enter %d numbar\n",m);
-                
-        for(n=0;n<m;n++)
-                scanf("%d",&a[n]);
-        printf("Enter the the number u want to search\n");
-        scanf("%d",&search);
-
-        first=0;
-        last=m-1;
-        middle=(first+last)/2;
-
-        while(first<=last)
-        {
-                if(a[middle]<search)
-                        first=middle+1;
-                else if(a[middle]==search)
-                {
-                        printf("%d found at location %d\n",search,middle+1);
-                        break;
-                }
-                else
-                        last=middle-1;
-                middle=(first+last)/2;
-        }
-        if(first>last)
-                printf("Not found! %d is not present in the list \n",search);
-        return 0;
-}
-```
-----
-## 10. FACTORIAL OF n NUMBER
-```C
-              
-#include<stdio.h>
-int main()
-{       
-        int n;
-        printf("enter number\n");
-        scanf("%d",&n);
-        int p=1;
-        for(int i=1;i<=n;i++)
-        {
-                p*=i;
-        }
-        printf("%d! = %d \n",n,p);
-}
-```
-----
-##  11. FIZZ-BUZZ GAME
-```C
-#include<stdio.h>
-int main()
-{
-        for(int i=1;i<=30;i++)
-                {
-                        if(i%15==0)
-                                printf("fizzbuzz\n");
-                        else if(i%5==0)
-                                printf("buzz\n");
-                        else if(i%3==0)
-                                printf("fizz\n");
-                        else {printf("%d\n",i);}
-                }
-        return 0;
-}
-```
-
-----
-## 12. SUM OF FIRST 100 NUMBERS
-```C
-#include<stdio.h>
-int main()
-{
-        int sum=0,i=1;
-        while(i<101)
-        {
-                sum =sum+i;
-                i++;
-        }
-        printf("sum of numbers from 0 to 100 is %d\n",sum);
-        return 0;
-}
-```
-
-----
-## 13. FIND GREATER BETWEEN TWO GIVEN NUMBERS
-```C
-#include<stdio.h>
-void main()
-{       
-        float a,b;
-        printf("enter first number\n");
-        scanf("%f",&a);
-        printf("enter the second nummber\n");
-        scanf("%f",&b);
-        if(a>b)
-                printf("%f is greater\n",a);
-        else if(b>a)
-                printf("%f is greater\n",b);
-        else    
-                printf("both numbers are equal\n");
-}
-```
-----
-## 14. GREATER AMONG THREE NUMBERS
-```C
-#include<stdio.h>
-void main()
-{
-int a,b,c;
-printf("enter the three numbers which you want to compare \n");
-scanf("%d%d%d",&a,&b,&c);
-if(a>b&&a>c)
-printf("\n%d is the greatest number\n",a);
-else if(b>a&&b>c)
-printf("\n%d is the greatest number\n",b);
-else 
-printf("\n%d is the greatest number\n",c);
-}
-```
-----
-## 15. GREATEST INTEGER FUNCTION
-```C
-#include<stdio.h>
-int gcd(int a,int b)
-{
-        int c;
-        c=a%b;
-        if(c==0)
-                return b;
-        else 
-                gcd(b,c);
-}
-int main()
-{
-        int m,n,c;
-        scanf("%d%d",&m ,&n);
-        c=gcd(m,n);
-        printf("\n gcd is %d \n",c);
-        return 0;
-}
-
-                         
-                                     **********************OR*******************
-                                     
-                                     
-                                     
-#include<stdio.h>
-int main()
-{       
-        int m,n,r=1;
-        printf("\nEnter value for m,n\n");
-        scanf("%d%d",&m,&n);
-        while(r!=0)
-        {
-                r=n%m;
-                n=m;
-                m=r;
-        }               
-        printf("\nGCD=%d\n",n);
-        return 0;
-}                       
-```
- ----
- ## 16. LEAP YEAR CHECK
- ```C
- #include <stdio.h>
+    #include<stdio.h>
     int main()
     {
-        int year;
-        printf("Enter a year: ");
-        scanf("%d",&year);
-        if(year%4 == 0)
-        {
-            if( year%100 == 0)
-            {
-                // year is divisible by 400, hence the year is a leap year
-                if ( year%400 == 0)
-                    printf("%d is a leap year.", year);
-                else
-                    printf("%d is not a leap year.", year);
-            }
-            else
-                printf("%d is a leap year.", year );
-        }
+         float x;
+         int n;
+
+         printf("\nEnter The Table: ");
+         scanf("%f",&x);
+
+         printf("\nEnter No. Times: ");
+         scanf("%d",&n);
+
+         for(int y=1; y<=n; y++)
+         {
+         printf("\n%.2f x %d = %.3f",x,y,x*y);
+         }
+         return 0;
+    }
+```
+
+### Output of the program
+
+    73.00 x 1 = 73.000
+    73.00 x 2 = 146.000
+    73.00 x 3 = 219.000
+    73.00 x 4 = 292.000
+    73.00 x 5 = 365.000
+    73.00 x 6 = 438.000
+    73.00 x 7 = 511.000
+
+###  4. Program to find Area, Perieter, Volume of a Circle
+
+```C
+    #include<stdio.h>
+    int main()
+    {
+         float r,P,A,V;
+         float pi = 22/7.0;
+
+         printf("\nEnter The Radius of Circle: ");
+         scanf("%f",&r);
+
+         P = 2*pi*r;
+         A = pi*r*r;
+         V = 4*pi*r*r*r/3.0;
+
+         printf("\nPerimeter of Circle is: = %.2f",P);
+         printf("\nArea of Circle is: = %.2f",A);
+
+         printf("\nVolume of Circle is: = %.2f",V);
+
+         return 0;
+     }
+```
+
+### Output of the program
+
+    Enter The Radius of Circle: 4.5
+
+    Perimeter of Circle is: = 28.29
+    Area of Circle is: = 63.64
+    Volume of Circle is: = 381.86
+
+###  5. Program to find Area, Perimeter of a Rectangle
+
+```C
+    #include<stdio.h>
+    int main()
+    {
+         float h,b,A,P;
+
+         printf("\nEnter Height: ");
+         scanf("%f",&h);
+
+         printf("\nEnter Bredth: ");
+         scanf("%f",&b);
+
+         A = h*b;
+         P = 2*(h+b);
+
+         printf("\nArea of Sqare (or) Rectangle: = %.3f",A);
+         printf("\nPerimeter of Sqare (or) Rectangle: = %.3f",P);
+
+         return 0;
+    }
+```
+
+### Output of the program
+
+    Enter Height: 24
+
+    Enter Bredth: 60
+
+    Area of Sqare (or) Rectangle: = 1440.000
+    Perimeter of Sqare (or) Rectangle: = 168.000
+
+###  6. Program to find Interest
+
+```C
+    #include<stdio.h>
+    int main()
+    {
+         float P,R,T,Interest;
+         printf("\nEnter The Principal Amount: ");
+         scanf("%f", &P);
+
+         printf("\nEnter The Interest Rate: ");
+         scanf("%f", &R);
+        
+         printf("\nEnter The Time (in months): ");
+         scanf("%f", &T);
+
+         Interest = P*T*R/100;
+        
+         printf("\nSimple Intesest is: = %.2f", Interest);
+         return Interest;
+    }
+```
+
+### Output of the program
+
+    Enter The Principal Amount: 4000
+
+    Enter The Interest Rate: 4
+
+    Enter The Time (in months): 3
+
+    Simple Intesest is: = 480.00
+
+###  7. Program to find Maximum
+
+```C
+    #include<stdio.h>
+    int max(float x,float y);
+    int main()
+    {
+         float x,y,z;
+
+         printf("\nEnter The First Value: ");
+         scanf("%f",&x);
+
+         printf("\nEnter The Second Value: ");
+         scanf("%f",&y);
+
+         z = max(x,y);
+
+         printf("\nMaximum value is: %.2f\n", z);
+
+         return 0;
+      }
+         int max(float x,float y)
+      {
+         float result;
+
+         if(x<y)
+         result = y;
+         else
+         result = x;
+
+         return result;
+    }
+```
+
+### Output of the program
+
+    Enter The First Value: 5
+
+    Enter The Second Value: 4
+
+    Maximum value is: 5.00
+
+###  8. Program of Sum of two Constants
+
+```C
+    #include<stdio.h>
+    int main()
+    {
+         int a=100,b=120,c;
+         c = a+b;
+         printf("\na=100\nb=120\nSum  of a and b is :%d",c);
+         return 0;
+    }
+```
+
+### Output of the program
+
+    a=100
+    b=120
+    Sum  of a and b is :220
+
+###  9. Program To find Minimum
+
+```C
+    #include<stdio.h>
+    int min(float x,float y);
+    int main()
+
+    {
+         float x,y,z;
+
+         printf("\nEnter The First Value: ");
+         scanf("%f",&x);
+
+         printf("\nEnter The SecondValue: ");
+         scanf("%f",&y);
+
+         z = min(x,y);
+
+         printf("\nMinimum value is: %.2f\n", z);
+
+         return 0;
+      }
+ 
+         int min(float x,float y)
+
+      {
+         float result;
+
+         if(x<y)
+         result = x;
+         else
+         result = y;
+
+         return result;
+    }
+```
+
+### Output of the program
+
+    Enter The First Value: 5
+
+    Enter The SecondValue: 3
+
+    Minimum value is: 3.00
+
+### 10. Program to take 5 values from the user and store them in an array and Print the elements
+### stored in the array
+
+```C
+     #include<stdio.h>
+     int main()
+     {
+       int x,array[5];
+       printf("\n");
+       
+       for(x=1;x<=5;x++)
+       {  printf("Enter [%d] element: ", x);
+          scanf("%d", &array[x]);  }
+          
+       for(x=1;x<=5;x++)
+       {  printf("\nElement [%d] = %d", x, array[x]);  }
+
+     return 0;
+     }
+```
+
+### Output of the Program
+
+     Enter [1] element: 4
+     Enter [2] element: 5
+     Enter [3] element: 6
+     Enter [4] element: 9
+     Enter [5] element: 2
+
+     Element [1] = 4
+     Element [2] = 5
+     Element [3] = 6
+     Element [4] = 9
+     Element [5] = 2
+
+###  11. Program to use Arithmetic Operators
+
+```C
+    #include<stdio.h>
+    int main()
+    {
+         float x,y,a;
+
+         printf("\nEnter The Value of x: ");
+         scanf("%f",&x);
+
+         printf("\nEnter The Value of y: ");
+         scanf("%f",&y);
+
+         a = x+y;
+         printf("x + y = %.3f\n",a);
+         a = x-y;
+         printf("x - y = %.3f\n",a);
+         a = y-x;
+         printf("y - x = %.3f\n",a);
+         a = x*y;
+         printf("x * y = %.3f\n",a);
+         a = x/y;
+         printf("x/y = %.3f\n",a);
+         a = y/x;
+         printf("y/x = %.3f\n",a);
+
+         return 0;
+    }
+```
+
+### Output of the program
+
+    Enter The Value of x: 45
+
+    Enter The Value of y: 31
+    x + y = 76.000
+    x - y = 14.000
+    y - x = -14.000
+    x * y = 1395.000
+    x/y = 1.452
+    y/x = 0.689
+
+###  12. Program to use Assignment Operators
+
+```C
+    #include<stdio.h>
+    int main()
+    {
+
+         float x,a;
+
+         printf("\nEnter The Value of x: ");
+         scanf("%f",&x);
+
+         a = x;
+         printf("Answer is a = x %.3f\n",a);
+         a +=x; //answer is a+x
+         printf("Answer is a+x = %.3f\n",a);
+         a -=x; //answer is a-x
+         printf("Answer is a-x = %.3f\n",a);
+         a *=x; //answer is a*x
+         printf("Answer is a*x = %.3f\n",a);
+         a /=x; //answer is a/x
+         printf("Answer is a/x= %.3f\n",a);
+
+         return 0;
+    }
+```
+
+### Output of the program
+
+    Enter The Value of x: 45
+    Answer is a = x 45.000
+    Answer is a+x = 90.000
+    Answer is a-x = 45.000
+    Answer is a*x = 2025.000
+    Answer is a/x= 45.000
+
+###  13. Program to use Operator Precedence
+
+```C
+    #include<stdio.h>
+ 
+    int main()
+    {
+         float a,b,c,d,A;
+
+         printf("\nEnter The Value of a: ");
+         scanf("%f",&a);
+
+         printf("Enter The Value of b: ");
+         scanf("%f",&b);
+
+         printf("Enter The Value of c: ");
+         scanf("%f",&c);
+
+         printf("Enter The Value of d: ");
+         scanf("%f",&d);
+
+         A = (a+b)*(c+d);
+         printf("\n (a+b)*(c+d) = %.3f",A);
+         A = (c+d)*a*b;
+         printf("\n (c+d)*a*b = %.3f",A);
+         A = a*d/(c-b-a);
+         printf("\n a*d/(c-b-a) = %.3f",A);
+         A = (b-c)*(a-d);
+         printf("\n (b-c)*(a-d) = %.3f",A);
+
+         return 0;
+    }
+```
+
+### Output of the program
+
+    Enter The Value of a: 45
+    Enter The Value of b: 31
+    Enter The Value of c: 18
+    Enter The Value of d: 71
+
+    (a+b)*(c+d) = 6764.000
+    (c+d)*a*b = 124155.000
+     a*d/(c-b-a) = -55.086
+    (b-c)*(a-d) = -338.000
+
+###  14. Program to find Average
+
+```C
+     #include<stdio.h>
+     int main()
+     {
+     int x,N;
+     float avg[1000],s,ans;
+
+     printf("\nEnter the Number of elements: ");
+     scanf("%d", &N);
+     printf("\n");
+
+     for(x=1; x<=N; x++)
+       {  printf("Enter [%d] element: ", x);
+          scanf("%f", &avg[x]);
+          s += avg[x];  }
+  
+       ans = s/N;
+
+     printf("\nAverage of %d elements = %.3f", N, ans);
+     return 0;
+     }
+```
+
+### Output of the program
+
+     Enter the Number of elements: 8
+
+     Enter [1] element: 1
+     Enter [2] element: 2
+     Enter [3] element: 3
+     Enter [4] element: 4
+     Enter [5] element: 5
+     Enter [6] element: 6
+     Enter [7] element: 7
+     Enter [8] element: 8
+     
+     Average of 8 elements = 4.500    
+
+###  15. Program to print Fibbonacci Series
+
+```C
+#include<stdio.h>
+int fibbo(int f);
+
+int main()                                                                      
+{
+   int x,i,f=0;
+   printf("\nEnter fibbonacci Number: ");
+   scanf("%d", &x);
+
+   for(i=1; i<=x; i++)
+     {  printf("%d\n", fibbo(f));
+        f++;  }
+return 0;
+}
+
+int fibbo(int f)
+  {  if(f==1 || f==0)
+     return f;
+     else
+     return ( fibbo(f-1) + fibbo(f-2) );  }
+```
+
+### Output of the program
+
+    Enter fibbonacci Number: 10
+    0
+    1
+    1 
+    2    
+    3    
+    5    
+    8
+    13
+    21
+    34
+
+###  16. Program to find FizzBuzz od a Integer
+
+```C
+    #include<stdio.h>
+    int main()
+    {
+         int n;
+         printf("\nEnter the Interger: ");
+         scanf("%d",&n);
+
+         if(n%15==0)
+         printf("\nFizzBuzz");
+         else if(n%3==0)
+         printf("Fizz\n");
+         else if (n%5==0)
+         printf("\nBuzz");
+         else
+         printf("\n%d",n);
+         return 0;
+    }
+```
+
+### Output of the program
+
+    Enter the Interger: 171
+    Fizz
+
+###  17. Program swap two numbers using call by value 
+
+```C
+    #include <stdio.h>
+    int main()
+    {
+      int x, y, t;
+      printf("\n\nEnter two integers: ");
+      scanf("%d %d", &x, &y);
+      printf("\n\nBefore Swapping: \nFirst integer = %d\nSecond integer = %d\n", x, y);
+      t = x;
+      x = y;
+      y = t;
+      printf("\n\nAfter Swapping: \nFirst integer = %d\nSecond integer = %d\n", x, y);
+      return 0;
+    }
+```
+
+### Output of the program
+
+    Enter two integers: 1  56
+
+    Before Swapping:
+    First integer = 1
+    Second integer = 56
+
+    After Swapping:
+    First integer = 56
+    Second integer = 1
+
+###  18. Program swap two numbers using call by reference
+
+```C
+#include <stdio.h>
+void swap(int*, int*);
+
+   int main()
+   {  int x, y;
+      printf("\nEnter the two integers: ");
+      scanf("%d %d", &x, &y);
+      printf("\nBefore Swapping\nx = %d\ny = %d", x, y);
+      
+      swap(&x, &y);
+      printf("\nAfter Swapping\nx = %d\ny = %d", x, y);
+      return 0;  }
+      
+   void swap(int *a, int *b)
+   {  int temp;
+      temp = *b;
+      *b = *a;
+      *a = temp;  }
+```
+
+### Output of the program
+
+     Enter the two integers: 45 98
+
+     Before Swapping
+     x = 45
+     y = 98
+     After Swapping
+     x = 98
+     y = 45
+
+###  19. Program of Addition of 2x2 Matrix
+
+```C
+    #include<stdio.h>
+    int main()
+
+    {
+         float a,b,c,d,e,f,g,h,i,j,k,l;
+
+         printf("\nSample of Ist matrix: | a=1      b=2 |\n                      | c=3      d=4 |\n\n\
+         Sample of 2nd matrix: | e=5      f=6 |\n                      | f=7      h=8 |\n\n");
+
+         printf("Enter The Valve of a: ");
+         scanf("%f",&a);
+         printf("Enter The Valve of b: ");
+         scanf("%f",&b);
+         printf("Enter The Valve of c: ");
+         scanf("%f",&c);
+         printf("Enter The Valve of d: ");
+         scanf("%f",&d);
+         printf("Enter The Valve of e: ");
+         scanf("%f",&e);
+         printf("Enter The Valve of f: ");
+         scanf("%f",&f);
+         printf("Enter The Valve of g: ");
+         scanf("%f",&g);
+         printf("Enter The Valve of h: ");
+         scanf("%f",&h); 
+        
+         i = a+e;
+         j = b+f;
+         k = c+g;
+         l = d+h;
+         printf("\n\nSum of Matrix(A+B) is: | %.2f     %.2f |\n                       | %.2f     %.2f |",i,j,k,l);
+        
+         i = a-e;
+         j = b-f;
+         k = c-g;
+         l = d-h;
+         printf("\n\nSubstraction of Matrix(A-B) is: | %.2f     %.2f |\n                                | %.2f     %.2f |",i,j,k,l);
+        
+         i = e-a;
+         j = f-b;
+         k = g-c;
+         l = h-d;
+         printf("\n\nSubstraction of Matrix(B-A) is: | %.2f     %.2f |\n                                | %.2f     %.2f |",i,j,k,l);
+         
+         return 0;
+    }
+```
+
+### Output of the program
+
+    Sample of Ist matrix: | a=1      b=2 |
+                          | c=3      d=4 |
+
+    Sample of 2nd matrix: | e=5      f=6 |
+                          | f=7      h=8 |
+
+    Enter The Valve of a: 7
+    Enter The Valve of b: 5
+    Enter The Valve of c: 4
+    Enter The Valve of d: 0
+    Enter The Valve of e: 3
+    Enter The Valve of f: 5
+    Enter The Valve of g: 9
+    Enter The Valve of h: 1
+
+
+    Sum of Matrix(A+B) is: | 10.00     10.00 |
+                           | 13.00     1.00 |
+
+    Substraction of Matrix(A-B) is: | 4.00     0.00 |
+                                    | -5.00     -1.00 |
+
+    Substraction of Matrix(B-A) is: | -4.00     0.00 |
+                                    | 5.00     1.00 |
+
+###  20. Program of Multiplication of 2x2 Matrix
+
+```C
+    #include<stdio.h>
+    int main()
+    {
+    float a,b,c,d,e,f,g,h,i,j,k,l;
+
+    printf("\nSample of Ist matrix: | a=1      b=2 |\n                      | c=3      d=4 |\n\n\
+    Sample of 2nd matrix: | e=5      f=6 |\n                      | f=7      h=8 |\n\n");
+ 
+         printf("Enter The Valve of a: ");
+         scanf("%f",&a);
+         printf("Enter The Valve of b: ");
+         scanf("%f",&b);
+         printf("Enter The Valve of c: ");
+         scanf("%f",&c);
+         printf("Enter The Valve of d: ");
+         scanf("%f",&d);
+         printf("Enter The Valve of e: ");
+         scanf("%f",&e);
+         printf("Enter The Valve of f: ");
+         scanf("%f",&f);
+         printf("Enter The Valve of g: ");
+         scanf("%f",&g);
+         printf("Enter The Valve of h: ");
+         scanf("%f",&h); 
+
+         i=(a*e)+(b*g);
+         j=(a*f)+(b*h);
+         k=(c*e)+(d*g);
+         l=(c*f)+(d*h);
+
+         printf("\nMultiplication of A,B is: | %.2f     %.2f |\n                          | %.2f     %.2f |",i,j,k,l);
+
+         return 0;
+    }
+```
+
+### Output of the program
+
+    Sample of Ist matrix: | a=1      b=2 |
+                          | c=3      d=4 |
+
+    Sample of 2nd matrix: | e=5      f=6 |
+                          | f=7      h=8 |
+
+    Enter The Valve of a: 7
+    Enter The Valve of b: 5
+    Enter The Valve of c: 4
+    Enter The Valve of d: 0
+    Enter The Valve of e: 3
+    Enter The Valve of f: 5
+    Enter The Valve of g: 9
+    Enter The Valve of h: 1
+
+    Multiplication of A,B is: | 66.00     40.00 |
+                              | 12.00     20.00 |
+
+###  21. Program of FizzBuzz in a continues loop
+
+```C
+    #include<stdio.h>
+    int main()
+    {
+         int n,x;
+         printf("\nEnter The Integer: ");
+         scanf("%d",&n);
+         printf("\n");
+
+      {
+         for(x=1;x<=n;x++)
+         if(x%15==0)
+         printf("FizzBuzz\n");
+         else if(x%3==0)
+         printf("Fizz\n");
+         else if(x%5==0)
+         printf("Buzz\n");
+         else
+         printf("%d\n",x);
+      }
+
+         return 0;
+    }
+```
+### Output of the program
+
+    Enter The Integer: 17
+
+    1
+    2
+    Fizz
+    4
+    Buzz
+    Fizz
+    7
+    8
+    Fizz
+    Buzz
+    11
+    Fizz
+    13
+    14
+    FizzBuzz
+    16
+    17
+    
+### 22. Program to find Sum by using function
+
+```C
+      #include<stdio.h>
+      int ans(float a, float b);
+      int main()
+      {
+          float a, b, ans;
+          printf("\nEnter The Value of a: ");
+          scanf("%f",&a);
+          printf("Enter The Value of b: ");
+          scanf("%f",&b);
+          ans = (a*b);
+          printf("Answer is: %.2f", ans);
+          return 0;
+      }
+      int ans(float a, float b)
+         {
+          return a*b;
+         }
+```         
+### Output of the program
+
+      Enter The Value of a: 4
+      Enter The Value of b: 5
+      Answer is: 20.00
+      
+### 23. Program to print a Pyramid
+
+```C
+     #include<stdio.h>
+     int main()
+     {
+     int i,j,n;
+     printf("\nEnter number of Rows: ");
+     scanf("%d",&n);
+     printf("\n");
+     
+     for(i=1; i<=n; i++)
+     {
+         for(j=1; j<=2*n-1; j++)
+         {
+         if(j>=n-(i-1) && j<=n+(i-1))
+         printf("*");
+         else
+         printf(" ");
+         }
+         printf("\n");
+         }
+         return 0;
+     }
+```
+
+### Output of the program
+
+     Enter number of Rows: 6
+     
+          *  
+         ***    
+        *****   
+       *******  
+      ********* 
+     ***********
+   
+### 24. Program to implement Linear search for One Dimensional array
+
+```C
+    #include<stdio.h>
+    int main()
+
+    {
+    int array[12]={1,5,9,7,3,82,46,23,23,5,10,3};
+    int size=12,flag=0,item,a;
+
+    printf("\nEnter the Value: ");
+    scanf("%d", &a);
+
+    for(int i=0;i<size;i++)
+      {
+        if(a==array[i])
+          {
+                flag=a;
+                break;
+          }
+      }
+      
+        if(flag==a)
+        printf("\nSearch is Sucessfull \n%d Element is present in the array\n",a);
         else
-            printf("%d is not a leap year.", year);
+        printf("\nSearch is Unsucessfull \n%d Element is not present in the array\n",a);
         
         return 0;
     }
----
 ```
-### OUTPUT
+### Output of the program
 
-Enter a year: 1900
-1900 is not a leap year.
-Enter a year: 2012
-2012 is a leap year.
+    First Case
 
-----
-## 17. LINEAR SEARCH
+    Enter the Value to be searched: 5
+
+    Search is Sucessfull 5 Element is present in the array
+    
+    Second Case
+    
+    Enter the Value to be searched: 2
+
+    Search is Unsucessfull 2 Element is not present in the array
+    
+
+### 25. Program to implement linear search with desirable values
+
+```C
+    #include<stdio.h>
+    int main()
+    {
+
+    int array[100],search,i,n;
+    printf("\nEnter the Number of elements in array: ");
+    scanf("%d",&n);
+    printf("\n");
+
+      for(i=1;i<=n;i++)
+      {  printf("Enter [%d] element: ",i);
+         scanf("%d",&array[i]);  }
+      
+    printf("\nEnter a number to search: ");
+    scanf("%d",&search);
+
+       for(i=0;i<=n;i++)
+       {
+          if(array[i]==search)         //if element is found
+          {  printf("\n%d is present at location %d\n",search,i);
+             break;   }
+          else if(i>=n)
+          {  printf("\n%d is not present in the array\n",search);  }
+
+       }
+
+    return 0;
+    }
+```
+### Output of the Program
+
+    Enter the Number of elements in array: 5
+
+    Enter [1] element: 1
+    Enter [2] element: 2
+    Enter [3] element: 3
+    Enter [4] element: 4
+    Enter [5] element: 5
+
+    Enter a number to search: 8
+
+    8 is not present in the array
+ 
+### 26. Program to implement Binary search with desirable values
+
+```C
+    #include<stdio.h>
+    int main()
+    {
+    int n,i,s,f,m,l,a[100];  //a= array, n= size of array, s= element to be searched
+                             //f= first element position, l= last element position
+                             //m= mid element position
+    printf("\nEnter the size of array: ");
+    scanf("%d",&n);
+    printf("\n");
+
+
+    for(i=1;i<=n;i++)
+    {  printf("Enter [%d] element: ",i);
+       scanf("%d",&a[i]);   }
+
+    printf("\nEnter the element you wants to search: ");
+    scanf("%d",&s);
+
+    f=0;
+    l=n-1;
+    m=(f+l)/2;
+
+
+    while(f<=l)
+    {
+          if (a[m]<s)
+          {  f=m+1;  }
+          else if(a[m]==s)
+          {  printf("Location of given %d is %d \n",s,m);
+             break;  }
+          else
+          {  l=m-1;  }
+          m=(f+l)/2;              
+    }
+
+    if(f>l)
+    printf("%d is not found in the array\n",s);
+  
+    return 0;
+    }
+```
+### output of the Program
+
+    Enter the size of array: 7
+      
+    Enter [1] element: 5
+    Enter [2] element: 2
+    Enter [3] element: 8
+    Enter [4] element: 49
+    Enter [5] element: 657
+    Enter [6] element: 32
+    Enter [7] element: 0
+  
+    Enter the element you wants to search: 5
+    Location of given 5 is 1 
+   
+### 27. Program to find Prime number
+
+```C
+      #include<stdio.h>
+      int main()
+      { 
+      int a;
+      printf("\nEnter the Number: ");
+      scanf("%d",&a);
+
+       for(int x=1;x<a;x++)
+       { 
+         if(a%x!=0)
+         {  printf("%d is a Prime Number",a);
+            break;  }
+         else
+         {  printf("%d is not a Prime Number",a);
+            break;  }
+        }
+      return 0;
+      }
+```
+
+### Output of the program
+
+      Enter the Number: 7
+      7 is not a Prime Number
+
+      Enter the Number: 8
+      8 is not a Prime Number
+ 
+### 28. Program of days of the week 
+
+```C
+     #include<stdio.h>
+     int main()
+     {
+
+     int x;
+     printf("\n\nEnter the day Number: ");
+     scanf("%d", &x);
+
+     switch(x)
+     {
+       case 1:
+       if(x==1)
+       {  printf("\nSunday");  }
+       case 2:
+       if(x==2)
+       {  printf("\nMonday");  }
+       case 3:
+       if(x==3)
+       {  printf("\nTuesday");  }
+       case 4:
+       if(x==4)
+       {  printf("\nWednesday");  }
+       case 5:
+       if(x==5)
+       {  printf("\nThursday");  }
+       case 6:
+       if(x==6)
+       {  printf("\nFriday");  }
+           case 7:
+       if(x==7)
+       {  printf("\nSaturday");  
+     } 
+
+     return 0;
+     }
+ ```    
+### Output of the Program
+
+    Enter the day Number: 3
+
+    Tuesday
+  
+
+### 29. Program to print Even numbers using while loop
+
 ```C
 #include<stdio.h>
+int main()
+{
+int x=1,N;
+printf("\n\nEntere the Integer: ");
+scanf("%d", &N);
 
-int check(int b[],int m,int o)
-{int p=-1;
-        for(int i=1;i<=m;i++)
-        {
-                if(b[i]==o)
-                 p = i;
-        }
+   while(x<=N)
+   {
+     if(x%2==0)
+     printf("\n%d", x);
+     else
+     printf("");
+     x++;
+   }
+return 0;
+}
+```
 
-                        return p;
+### Output of the Program
+
+     Entere the Integer: 10
+
+     2
+     4
+     6
+     8  
+     10
+  
+### 30 Program of Volume(Different Shapes)
+
+```C
+    #include<stdio.h>
+    int main()
+    {
+    int a;                             //a = Code of the shape     
+    float sphere,Sr,pi=22.0/7.0;       //Cr = radius of circle, sphere = volume (Sphere)
+    float Cs,cube;                     //Cs = side, cude = volumre (cube)
+    float Rl,Rb,Rh,rectangle;          //Rl = length, Rb = breadth, Rh = Heigth, rectangle = volume (Rectangle)
+    float Cr,Ch,cylinder;              //Cr = Radius, Ch = Height, cylinder = Volume (cylinder)
+    float CoR,CoH,cone;                //CoR = Radius, CoH = Height, cone = Volume (Cone)
+
+    printf("\n\nPress 1 (Sphere) \nPress 2 (Cube) \nPress 3 (Rectangle) \n\
+    Press 4 (Cylinder) \nPress 5 (Cone) \n\nEnter the shape,you wants to find the volume: ");
+    scanf("%d", &a);
+
+    switch(a)
+    {
+    case 1:
+      if(a==1)
+      { printf("\nEnter the radius of Sphere: ");
+      scanf("%f", &Sr);
+      sphere = 4*pi*Sr*Sr*Sr/3;
+      printf("Volume of Shpere = %.4f", sphere);
+      break;  }
+
+    case 2:
+      if(a==2)
+      { printf("\nEnter the Side of Cube: ");
+      scanf("%f", &Cs);
+      cube = Cs*Cs*Cs;
+      printf("Volume of Cube = %.4f", cube);
+      break;  }
         
-}
+    case 3:
+      if(a==3)
+      {  printf("\nEnter the length of Rectangle: ");
+      scanf("%f", &Rl);
+      printf("Enter the breadth of Rectangle: ");
+      scanf("%f", &Rb);
+      printf("Enter the Height of Rectangle: ");
+      scanf("%f", &Rh);
+      rectangle = Rl*Rb*Rh;
+      printf("Volume of Rectangle = %.4f", rectangle);
+      break;  }
+        
+    case 4:
+      if(a==4)
+      {  printf("\nEnter the Radius of Cylinder: ");
+      scanf("%f", &Cr);
+      printf("Enter the Height of Cylinder: ");
+      scanf("%f", &Ch);
+      cylinder = pi*Cr*Cr*Ch;
+      printf("Volume of Cylinder = %.4f", cylinder);
+      break;  }
+        
+    case 5:
+      if(a==5)
+      {  printf("\nEnter the Radius of Cone: ");
+      scanf("%f", &CoR);
+      printf("Enter the Height of Cone: ");
+      scanf("%f", &CoH);
+      cone = pi*CoR*CoR*CoH/3;
+      printf("Volume of Cone = %.4f", cone);
+      break;  }
+        
+    } 
+    return 0;
+    
+    } 
+```
+### output of the Program 
 
-void main()
+    Press 1 (Sphere) 
+    Press 2 (Cube) 
+    Press 3 (Rectangle) 
+    Press 4 (Cylinder) 
+    Press 5 (Cone)                                                            
+
+    Enter the shape,you wants to find the volume: 1
+    Enter the radius of Sphere: 10
+    Volume of Shpere = 4190.4761 
+
+    Enter the shape,you wants to find the volume: 2
+    Enter the Side of Cube: 17.5   
+    Volume of Cube = 5359.3750
+
+    Enter the shape,you wants to find the volume: 3
+    Enter the length of Rectangle: 11
+    Enter the breadth of Rectangle: 12
+    Enter the Height of Rectangle: 13
+    Volume of Rectangle = 1716.0000
+
+    Enter the shape,you wants to find the volume: 4
+    Enter the Radius of Cylinder: 7
+    Enter the Height of Cylinder: 8
+    Volume of Cylinder = 1232.0000
+
+    Enter the shape,you wants to find the volume: 5
+    Enter the Radius of Cone: 2
+    Enter the Height of Cone: 1.5
+    Volume of Cone = 6.2857
+
+
+### 31. Program to find Sum of A.P series
+
+```C
+    #include<stdio.h>
+    int main()
+    {   
+    int N,x;                //N = length of the series, x = second term or difference
+    float a1,a2,d,S;        //a1 = first or last term
+                            //a2 = second term, d = differenc
+                            //S = sum of the terms
+    printf("\n\nEnter N of the series: ");
+    scanf("%d", &N);
+    printf("Enter first or last term of the series: ");
+    scanf("%f", &a1);
+
+    printf("\nEnter 1 for Second term, Enter 2 for difference\n\nEnter 1 or 2: ");
+    scanf("%d", &x);
+
+
+    if(x==1)
+      {  printf("\nEnter the second term: ");
+         scanf("%f", &a2);
+         d = a2-a1;
+         S = N*(2*a1 + (N-1)*d) /2;
+         printf("\nSum of given series = %.2f", S);  }
+
+    else if(x==2)
+      {  printf("\nEnter the Difference: ");
+         scanf("%f", &d);
+         S = N*(2*a1 + (N-1)*d) /2;
+         printf("\nSum of given series = %.2f", S);  }
+
+    else
+      printf("\nEnter a valid input(1 or 2)");
+    return 0;
+    }
+```  
+### Output of the Program 
+
+    Enter N of the series: 10
+    Enter first or last term of the series: 2
+
+    Enter 1 for Second term, Enter 2 for difference
+
+    Enter 1 or 2: 1
+
+    Enter the second term: 6
+
+    Sum of given series = 200.00
+
+### 32. Program to multiply Two Floating Point Numbers
+
+```C
+     #include<stdio.h>
+     int main()
+     {
+     float x,y,ans;
+       printf("\n\nEnter the First value: ");
+       scanf("%f", &x);
+       printf("Enter the Second value: ");
+       scanf("%f", &y);
+
+       ans = x*y;
+
+       printf("\nAnswer = %.3f",ans);
+     return 0;
+     }
+```
+
+### Output of the Program
+
+     Enter the First value: 1.2
+     Enter the Second value: 3.2
+  
+     Answer = 3.840
+     
+### 33. Program to find weather the Number is Even or Odd using if-else statement
+
+```C
+     #include<stdio.h>
+     int main()
+     {
+     int x;
+       printf("\n\nEnter the Number: ");
+       scanf("%d", &x);
+
+       if(x%2==0)
+       printf("%d is Even", x);
+       else
+       printf("%d is Odd", x);
+     return 0;
+     }
+```
+
+### Output of the Program
+
+     Enter the Number: 6
+     6 is Even
+
+     Enter the Number: 9
+     9 is Odd
+     
+### 34. Program to find Sum of First 10 Natural Numbers using for loop
+
+```C
+#include<stdio.h>
+int main()
 {
-        int n,num,index;
-        printf("enter the array size\n");
-        scanf("%d",&n);
-        int a[n];
-        printf("enter the array elements\n");
-        for(int i=1;i<=n;i++)
-        {
-                scanf("%d",&a[i]);
-        }
-        printf("now enter the number which you want to check\n whether it is present or not in entered array\n");
+int x,ans;
+  for(x=1;x<=10;x++)
+  {  ans += x; }
 
-        scanf("%d",&num);
-        index=check(a,n,num);
-        if(index==-1)
-        printf("element is not found\n");
+  printf("\n\nSum of first 10 Nmubers: %d",ans);
+return 0;
+}
+```
+
+### Output of the Program
+
+     Sum of first 10 Nmubers: 55
+
+### 35. Program to print Odd numbers using do while loop
+ 
+```C
+     #include<stdio.h>
+     int main()
+     {
+     int x=1,N;
+     printf("\n\nEntere the Integer: ");
+     scanf("%d", &N);
+       do
+        {
+        if(x%2!=0)
+        printf("\n%d", x);
         else
-        printf("element is found at the position %d \n",index);
-}
-```
-----
-##  18. SUM OF TWO MATRIX
-```C
-   include<stdio.h>
-void main()
-{
-        int a[10][10],b[10][10],c[10][10];
-        int m,n,i,j;
-        printf("Enter size of matrix A as m,n:");
-        scanf("%d%d",&m,&n);
-        printf("\nEnter elements of matrix A rowwise m*n\n");
-        for(i=0;i<m;i++)
-        {
-                for(j=0;j<n;j++)
-                {
-                        scanf("%d",&a[i][j]);
-                }
+        printf("");
+        x++;
         }
-        printf("enter the elements of second matrix\n");
-        for(i=0;i<m;i++)
-        {
-                for(j=0;j<n;j++)
-                {
-                        scanf("%d",&b[i][j]);
-                }
-        }
-        for(i=0;i<m;i++)
-        {
-                for(j=0;j<n;j++)
-                {
-                        c[i][j]=b[i][j]+a[i][j];
-                }
-        }
-        printf("\nSUM OF MATRIX A&B \n");
-        for(i=0;i<m;i++)
-        {
-                for(j=0;j<n;j++)
-                {
-                        printf("%d    ",c[i][j]);
-                }
-                printf("\n");
-        }       
-}       
+       while(x<=N);
+     return 0;
+     }
 ```
 
+### Output of the Program
 
-----
-## 19. TRANSPOSE MATRIX
+     Entere the Integer: 13
+
+     1
+     3
+     5
+     7
+     9
+     11
+     13
+     
+### 36. Program of a Simple Calculator
+
 ```C
-#include<stdio.h>
-int main()
-{ 
-        int m,n,i,j;
-        printf("enter the number of rows and columns of matrix\n");
-        scanf("%d%d",&m,&n);
-        int a[m][n],b[m][n] ;
-                printf("enter the elements of  matrix row wise\n");
-                for(i=0;i<m;i++)
-                {
-                        for(j=0;j<n;j++)
-                        {
-                                scanf("%d",&a[i][j]);
-                        }       
-                }       
-                
-                for(i=0;i<m;i++)
-                {
-                        for(j=0;j<n;j++)
-                        {
-                                b[j][i]=a[i][j];
-                        }       
-                }       
-                printf("transpose  of matrix is \n");
-                for(i=0;i<m;i++)
-                {
-                        for(j=0;j<n;j++)
-                        {
-                                printf("%d ",b[i][j]);
-                        }       
-                        printf("\n");
-                }       
-}               
+     include<stdio.h>
+     int main()
+     {
+     char operator;
+     float x,y;
+     printf("\n\nEnter an operator (+, -, *, /): ");
+     scanf("%c", &operator);
+     printf("Enter two operands: ");
+     scanf("%f %f", &x, &y);
+     switch(operator)
+     {
+             case '+':
+             printf("\n%.2f + %.2f = %.2f", x, y, x+y);
+             break;
+             case '-':
+             printf("\n%.2f - %.2f = %.2f", x, y, x-y);
+             break;
+             case '*':
+             printf("\n%.2f * %.2f = %.2f", x, y, x*y);
+             break;
+             case '/':
+             printf("\n%.2f / %.2f = %.2f", x, y, x/y);
+             break;
+             default:
+             printf("\nError! operator is not correct");
+     }
+     return 0;
+     }
 ```
-----
-## 20. SUM OF DIGITS OF A NUMBER
+### Output of the Program
+
+     Enter an operator (+, -, *, /): *
+     Enter two operands: 146  21
+
+     146.00 * 21.00 = 3066.00
+
+### 37. Program to implement Bubble Sort
+
 ```C
-#include<stdio.h>
-int main()
-{
-        int a,sum=0,c;
-        printf("enter the number\n");
-        scanf("%d",&a);
-        while(a!=0)
-        {
-        c=a%10;
-        sum+=c;
-        a=a/10;
-        }
-        printf("sum of digits is %d\n",sum);
-}
-```
-----
-## 21. CHECK PALINDROME NUMBER
-```C
-#include<stdio.h>
+#include <stdio.h>
 int main()
 {
-        int sum=0,digit;
-        int n, temp;
-        printf("enter any positive integer number\n");
-        scanf("%d",&n);
-        temp=n;
-        while(temp>0)
-        {
-                digit=temp%10;
-                temp/=10;
-                sum=sum*10+digit;
-        }
-        if(n==sum)
-                printf("\n %d is a palidrome number\n",n);
-        else
-                printf("\n %d is not a palidrome number\n",n);
+  int array[100], n, c, d, swap;
+  printf("Enter number of elements: ");
+  scanf("%d", &n);
+  printf("Enter %d integers\n", n);
+
+  for (c=0; c<n; c++)
+    scanf("%d", &array[c]);
+
+  for (c=0; c<n-1; c++)
+  {
+    for (d=0 ; d<n-c-1; d++)
+    {
+      if (array[d] > array[d+1])
+      {
+        swap       = array[d];
+        array[d]   = array[d+1];
+        array[d+1] = swap;
+      }
+    }
+  }
+
+  printf("Sorted list in ascending order:\n");
+
+  for (c=0; c<n; c++)
+     printf("%d\n", array[c]);
+
+  return 0;
 }
 ```
- ----
- ## 22. CALL BY VALUE
- ```C
- #include<stdio.h>
-void swap(int a,int b);
-void main()
-{
-int x,y;
-printf("\n Enter value for x:");
-scanf("%d",&x);
-printf("\n Enter value for y:");
-scanf("%d",&y);
-printf("\n Before calling swap functin\n");
-printf("\n Value of x=%d,Value of y=%d\n",x,y);
-swap(x,y);
-printf("\n After returning from swap function");
-printf("\n Value of x=%d,value of y=%d\n",x,y);
-}
-void swap(int a,int b)
-{
-int temp;
-printf("\n Inside the function \n");
-printf("\n Value of a=%d,Value of b=%d before swaping\n",a,b);
-temp=a;
-a=b;
-b=temp;
-printf("\n Value of a=%d,Value of b=%d after swaping\n",a,b);
-}
-```
-----
-## 23. CALL BY REFERENCE
+### Output of the Program
+
+    Enter number of elements: 6
+    Enter 6 integers
+    1     
+    2      
+    3       
+    8       
+    9     
+    1   
+    Sorted list in ascending order:
+    1
+    1 
+    2
+    3 
+    8    
+    9
+
+### 38. Program to find Factorial 
+
 ```C
 #include<stdio.h>
-void swap(int *,int *);
-void main()
-{
-int x,y;
-printf("\n Enter value for x:");
-scanf("%d",&x);
-printf("\n Enter value for y:");
-scanf("%d",&y);
-printf("\n Before calling swap functin\n");
-printf("\n Value of x=%d,Value of y=%d\n",x,y);
-swap(&x,&y);
-printf("\n After returning from swap function");
-printf("\n Value of x=%d,value of y=%d\n",x,y);
-}
-void swap(int *a,int *b)
-{
-int temp;
-printf("\n Inside the function \n");
-printf("\n Value of a=%d,Value of b=%d before swaping\n",*a,*b);
-temp=*a;
-*a=*b;
-*b=temp;
-printf("\n Value of a=%d,Value of b=%d after swaping\n",*a,*b);
-}
+long factorial(int);
+
+int main()
+  {  int x;
+     long fact = 1;
+     printf("\nEnter a number to calculate it's factorial: ");
+     scanf("%d", &x);
+     printf("%d! = %ld\n", x, factorial(x));
+     return 0;  }
+
+long factorial(int x)
+  {  int c;
+     long ans=1;
+     for (c=x; c>1; c--)
+     {  ans *= c;  }
+     return ans;
+  }
 ```
-----
-## 24. EMPLOYEE DETAILS USING STRUCTURE
+
+### Output of the Program
+
+     Enter a number to calculate it's factorial: 6
+     6! = 720
+
+     Enter a number to calculate it's factorial: 12
+     12! = 479001600
+     
+### 39. Program to Store Information of a Student using Structure
+
 ```C
-#include<stdio.h>
-#include<string.h>
-struct employee
-{
-        int code;
-        char name[20];
-        char department[20];
-        float salary;
-};
-void main()
-{
-        struct employee e;
-        printf("enter employee code\n");
-        scanf("%d",&e.code);
-        printf("enter employee name\n");
-        scanf("%s",&e.name);
-        printf("enter employee department\n");
-        scanf("%s",&e.department);
-        printf("enter employee salary\n");
-        scanf("%f",&e.salary);
-        printf("information about employee is \n");
-        printf("Employee code: %d \n",e.code);
-        printf("Employee name: %s \n",e.name);
-        printf("Employee department: %s \n",e.department);
-        printf("Employee salary: %f \n",e.salary);
-}
+    #include<stdio.h>
+    struct student
+    {  char name[50];
+       long int ph,marks;  };
+
+    int main()
+    {
+      int i,N;
+      printf("\nEnter the information of student: \n");
+
+      struct student s;
+      printf("Enter Name: ");
+       scanf("%s", &s.name);
+      printf("Enter Phone Number: ");
+       scanf("%ld", &s.ph);
+      printf("Enter Marks: ");
+       scanf("%d", &s.marks);
+
+      printf("\nEntered Information is: \n");
+  
+      printf("Name: %s\n", s.name);
+      printf("Age: %ld\n", s.ph);
+      printf("Marks: %d\n", s.marks);
+
+    return 0;
+    }
 ```
-----
-## 25. FRACTION PRODUCT USING STRUCTURE
-```C
-#include<stdio.h>
-struct fraction
-{
-        int num;
-        int den;
-};
-void main()
-{
-        int rnum,rden;
-        struct fraction f1,f2;
-        printf("enter numerator and denominator of first fraction\n");
-        scanf("%d%d",&f1.num,&f1.den);
-        printf("enter numerator and denominator of second fraction\n");
-        scanf("%d%d",&f2.num,&f2.den);  
-        rnum=f1.num*f2.num;
-        rden=f1.den*f2.den;
-        printf("\nproduct is : %d/%d\n",rnum,rden);
-}
-```
+
+### Output of the Program
+
+    Enter the information of student: 
+    Enter Name: Sahil
+    Enter Phone Number: 9877122721
+    Enter Marks: 80
+
+    Entered Information is: 
+    Name: Sahil
+    Age: 9465329287
+    Marks: 88
